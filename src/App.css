@@ -1,0 +1,116 @@
+.App {
+  position: absolute;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+                      "header"
+                      "main"
+                      ".";
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1.6rem;
+}
+
+
+main {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.form input {
+  margin-bottom: 2rem;
+  padding: 1rem 1.2rem;
+  width: 25rem;
+  border: 0.05rem solid rgba( 0, 0, 0, 0.1);
+  background-color: #F7F7F7;
+  border-radius: 0.7rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.form input:focus {
+  border-color: rgba( 0, 0, 0, 0.5);
+}
+
+.form button {
+  margin: 0 auto;
+  border: 1px solid #4285F4;
+  border-radius: 1rem;
+  background-color: #4285F4;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.3s ease, transform 0.05s ease;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.form button:hover {
+  background-color: white;
+  color: #4285F4;
+}
+
+.form button:active {
+  transform: scale(0.95);
+}
+
+.status-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.status {
+  font-size: 1.6rem;
+  padding: 0 1rem 1rem 1rem;
+  overflow: hidden;
+}
+
+.status a {
+  color: #303030;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+}
+
+.status a::after {
+  content: '';
+  position: absolute;
+  background-color: #4285F4;
+  width: 120%;
+  height: 40%;
+  transform: rotate(-3deg) translateX(-50%);
+  left: 50%;
+  bottom: 0;
+  z-index: -1;
+  transition: transform 0.2s ease;
+}
+
+.status a:hover::after {
+  transform: rotate(-3deg) translateX(-150%);
+}
