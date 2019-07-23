@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import backendAxios from './backendAxios';
 import './App.css';
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
 
     setStatus('Request sent');
     const encodedUrl = encodeURIComponent(url);
-    const res = await axios.get(`/${encodedUrl}`);
+    const res = await backendAxios.get(`/url/${encodedUrl}`);
     console.log(res.data);
     setStatus(res.data.downloadUrl);
   };
