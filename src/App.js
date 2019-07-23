@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import backendAxios from './backendAxios';
-import './App.css';
+import './App.scss';
 
 function App() {
 
