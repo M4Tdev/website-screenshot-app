@@ -20,13 +20,18 @@ header {
   align-items: flex-end;
   font-size: 1.8rem;
   text-align: center;
+
+  & h1 {
+    margin-bottom: 0;
+  }
 }
 
 main {
   grid-area: main;
   display: flex;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
+  padding-top: 6rem;
 }
 
 .form {
@@ -45,7 +50,7 @@ main {
 }
 
 .form input {
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
   padding: 1.2rem;
   width: 30rem;
   height: 4rem;
