@@ -10,7 +10,7 @@
   grid-template-areas:
                       "header"
                       "main"
-                      ".";
+                      "status";
 }
 
 header {
@@ -18,9 +18,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  text-align: center;
 }
-
 
 main {
   grid-area: main;
@@ -36,16 +36,17 @@ main {
 
 .form label {
   margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
 }
 
 .form input {
   margin-bottom: 2rem;
   padding: 1rem 1.2rem;
-  width: 25rem;
+  width: 30rem;
+  height: 2rem;
   border: 0.05rem solid rgba( 0, 0, 0, 0.1);
-  background-color: #F7F7F7;
+  background-color: #dedede;
   border-radius: 0.7rem;
   outline: none;
   transition: border 0.3s ease;
@@ -61,17 +62,18 @@ main {
   border-radius: 1rem;
   background-color: #4285F4;
   color: white;
-  padding: 1rem;
+  padding: 1.5rem 2rem;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.3s ease, transform 0.05s ease;
   outline: none;
   font-family: 'Josefin Sans', sans-serif;
   position: relative;
   overflow: hidden;
+  letter-spacing: 0.1rem;
 }
 
 .form button:hover {
-  background-color: white;
+  background-color: #f7f7f7;
   color: #4285F4;
 }
 
@@ -83,6 +85,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  grid-area: status;
 }
 
 .status {

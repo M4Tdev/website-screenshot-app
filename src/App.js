@@ -18,8 +18,6 @@ function App() {
     e.preventDefault();
 
     if (url === '') {
-      // show error
-      console.log('Please provide the URL');
       setStatus('Provide the URL');
 
       return;
@@ -28,8 +26,9 @@ function App() {
     setStatus('Request sent');
     const encodedUrl = encodeURIComponent(url);
     const res = await backendAxios.get(`/url/${encodedUrl}`);
-    console.log(res.data);
     setStatus(res.data.downloadUrl);
+
+    setUrl('');
   };
 
   return (
@@ -45,7 +44,6 @@ function App() {
         </form>
       </main>
       <div className="status-section">
-        {/* // TODO */}
         {status !== '' ? (
           <div className="status" dangerouslySetInnerHTML={{ __html: status }} ></div>
         ) : null}
