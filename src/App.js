@@ -6,6 +6,7 @@ function App() {
 
   const [url, setUrl] = useState('');
   const [status, setStatus] = useState('');
+  const [selected, setSelected] = useState('header');
 
   const inputChange = (e) => {
     setUrl(e.currentTarget.value);
@@ -13,6 +14,10 @@ function App() {
       setStatus('');
     }
   }
+
+  const selectChange = (e) => {
+    setSelected(e.currentTarget.value);
+  };
 
   const takeScreenshot = async (e) => {
     e.preventDefault();
@@ -25,7 +30,8 @@ function App() {
 
     setStatus('Request sent');
     const encodedUrl = encodeURIComponent(url);
-    const res = await backendAxios.get(`/url/${encodedUrl}`);
+    const res = await backendAxios.get(`/url/${encodedUrl}?mode=${selected}`);
+    console.log(res.data);
     setStatus(res.data.downloadUrl);
 
     setUrl('');
@@ -40,6 +46,11 @@ function App() {
         <form className="form" onSubmit={takeScreenshot}>
           <label htmlFor="url">URL</label>
           <input type="text" name="url" id="url" value={url} onChange={inputChange} />
+          <label className="center" htmlFor="screenshot-mode">Screenshot mode</label>
+          <select id="screenshot-mode" value={selected} onChange={selectChange}>
+            <option value="header">Header</option>
+            <option value="fullpage">Full page</option>
+          </select>
           <button type="submit">Take a screenshot</button>
         </form>
       </main>
