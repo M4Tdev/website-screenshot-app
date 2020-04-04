@@ -1,7 +1,7 @@
 {
 	"build": {
 		"env": {
-			"REACT_APP_API_URL": "@screenshoot-app_api_url"
+			"REACT_APP_API_URL": "@screenshot-app_api_url"
 		}
 	}
 }
